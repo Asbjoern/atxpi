@@ -1,15 +1,16 @@
-#define DEBUG 1
+#define DEBUG 0
 
 #include <Bounce.h>
 
 #define READY_LED 11
 #define POWER_LED 0
-#define POWER_SWITCH 1
-#define RESET_SWITCH 2
-#define PI_GPIO_23 3 // used to tell rpi to shutdown
-#define PI_GPIO_24 4 // used to tell teensy the rpi is up, and when to cut power
-#define PI_GPIO_25 5 // used to tell the teensy the rpi is rebooting (don't cut power)
-#define PS_ON 6
+#define HDD_LED 1
+#define POWER_SWITCH 2
+#define RESET_SWITCH 3
+#define PI_GPIO_23 4 // used to tell rpi to shutdown
+#define PI_GPIO_24 5 // used to tell teensy the rpi is up, and when to cut power
+#define PI_GPIO_25 6 // used to tell the teensy the rpi is rebooting (don't cut power)
+#define PS_ON 7
 
 
 int power_state = 0;
@@ -45,6 +46,7 @@ void setup() {
 	#endif
 	pinMode(READY_LED, OUTPUT);
 	pinMode(POWER_LED, OUTPUT);
+	pinMode(HDD_LED, OUTPUT);
 	pinMode(PI_GPIO_23, OUTPUT);
 	pinMode(PS_ON, OUTPUT);
 	pinMode(PI_GPIO_23, OUTPUT);
@@ -57,6 +59,7 @@ void setup() {
 	digitalWrite(PI_GPIO_23, LOW);
 	digitalWrite(PS_ON, HIGH);
 	digitalWrite(POWER_LED, LOW);
+	digitalWrite(HDD_LED, LOW);
 
 	digitalWrite(READY_LED, HIGH);
 	#if DEBUG
