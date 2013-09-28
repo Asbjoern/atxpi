@@ -56,10 +56,8 @@ void setup() {
 	pinMode(POWER_SWITCH, INPUT_PULLUP);
 	pinMode(RESET_SWITCH, INPUT_PULLUP);
 
-	digitalWrite(PI_GPIO_23, LOW);
-	digitalWrite(PS_ON, HIGH);
-	digitalWrite(POWER_LED, LOW);
 	digitalWrite(HDD_LED, LOW);
+	powerOff();
 
 	digitalWrite(READY_LED, HIGH);
 	#if DEBUG
@@ -94,11 +92,11 @@ void loop() {
 					Serial.println("soft shutdown triggered");
 					#endif
 				}
-				if(power_button_timer >= 7000) {
+				if(power_button_timer >= 5000) {
 					#if DEBUG
 					Serial.println("forcing shutdown");
 					#endif
-					// power button held down for 7 seconds, force shutdown
+					// power button held down for 5 seconds, force shutdown
 					powerOff();
 					break;
 				}
@@ -120,7 +118,7 @@ void loop() {
 				Serial.println("cycling power");
 				#endif
 				powerOff();
-				delay(1000);
+				delay(2000);
 				powerOn();
 				break;
 			}
