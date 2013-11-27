@@ -19,10 +19,13 @@ behavior, handling ATX power supply states, power / reset buttons, and LEDs.
 ### GPIO pins ###
 The RPI will monitor GPIO 23 and shutdown if it is set to HIGH. After the RPI boots it will set GPIO 24 HIGH, telling the
 teensy that the RPI is up. When GPIO 24 goes from HIGH to LOW the teensy will wait 5 seconds then cut power, unless GPIO
-25 is HIGH. GPIO 25 is set to HIGH when the RPI is rebooting, preventing the teensy from cutting power power when GPIO 24
+25 is HIGH. GPIO 25 is set to HIGH when the RPI is rebooting, preventing the teensy from cutting power when GPIO 24
 changes from HIGH to LOW.
 
-## RPI Power Scripts Installation ##
+## RPI Power Scripts Installation (Arch) ##
+(Working on it)
+
+## RPI Power Scripts Installation (Raspbian) ##
 (Working on it)
 
 ## Components ##
