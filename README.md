@@ -23,7 +23,11 @@ teensy that the RPI is up. When GPIO 24 goes from HIGH to LOW the teensy will wa
 changes from HIGH to LOW.
 
 ## RPI Power Scripts Installation (Arch) ##
-Log into the RPI and become root. Then clone the repo and copy required files.
+Log into the RPI and become root. You will need to install git and WiringPi:
+
+    [root@alarmpi ~]$ pacman -Sy git wiringpi
+
+Next, clone the repo and copy required files.
 
     [root@alarmpi ~]$ git clone https://github.com/steelcaverobotics/atxpi.git
     [root@alarmpi ~]$ mkdir /opt/atxpi
@@ -43,7 +47,32 @@ Finally, start the services. Do not start `atxpi-gpio-reboot.service`, as this w
     [root@alarmpi ~]$ systemctl start atxpi-gpio-shutdown.service
 
 ## RPI Power Scripts Installation (Raspbian) ##
-(Working on it)
+Log into the RPI and become root. You will need to install git and WiringPi:
+
+    root@raspberrypi:~# apt-get install git-core
+    root@raspberrypi:~# git clone git://git.drogon.net/wiringPi
+    root@raspberrypi:~# cd wiringPi/
+    root@raspberrypi:~# ./build
+
+Next, clone the repo and copy required files.
+
+    root@raspberrypi:~# git clone https://github.com/steelcaverobotics/atxpi.git
+    root@raspberrypi:~# mkdir /opt/atxpi
+    root@raspberrypi:~# cp atxpi/rpi_power_scripts/*.sh /opt/atxpi/
+    root@raspberrypi:~# chmod 755 /opt/atxpi/*.sh
+    root@raspberrypi:~# cp atxpi/service_files/raspbian/* /etc/init.d/
+    root@raspberrypi:~# chmod 755 /etc/init.d/atxpi-gpio-*
+
+Then enable the services, skipping `atxpi-gpio-shutdown` if you don't want the RPI to shutdown when the power button is pressed.
+
+    root@raspberrypi:~# update-rc.d atxpi-gpio-boot defaults
+    root@raspberrypi:~# update-rc.d atxpi-gpio-reboot defaults
+    root@raspberrypi:~# update-rc.d atxpi-gpio-shutdown defaults
+
+Finally, start the services.
+
+    root@raspberrypi:~# /etc/init.d/atxpi-gpio-boot start
+    root@raspberrypi:~# /etc/init.d/atxpi-gpio-shutdown start
 
 ## Components ##
 * [Teensy 2.0](http://www.pjrc.com/store/teensy.html)

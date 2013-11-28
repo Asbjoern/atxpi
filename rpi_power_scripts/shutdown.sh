@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PATH=/usr/bin:/usr/local/bin
+PATH=/bin:/sbin:/usr/bin:/usr/local/bin
 
 gpio -g mode 23 in
 

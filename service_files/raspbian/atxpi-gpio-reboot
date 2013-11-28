@@ -1,0 +1,23 @@
+#!/bin/bash
+
+### BEGIN INIT INFO
+# Provides:		atxpi-gpio-reboot
+# Required-Start:	$remote_fs $syslog
+# Required-Stop:	$remote_fs $syslog
+# Default-Start:
+# Default-Stop:	6
+# Short-Description: Notify atxpi power controller that the RPI is rebooting
+### END INIT INFO
+
+set -e
+. /lib/lsb/init-functions
+
+echo 1$ >> /root/arg1.txt
+
+case $1 in
+	stop)
+		/opt/atxpi/reboot.sh
+	;;
+esac
+
+exit 0

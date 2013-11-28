@@ -1,0 +1,21 @@
+#!/bin/bash
+
+### BEGIN INIT INFO
+# Provides:		atxpi-gpio-boot
+# Required-Start:	$all
+# Required-Stop:	$all
+# Default-Start:	2 3 4 5
+# Default-Stop:	0 1 6
+# Short-Description: Notify atxpi power controller that the RPI is up
+### END INIT INFO
+
+set -e
+. /lib/lsb/init-functions
+
+case $1 in
+	start)
+		/opt/atxpi/boot.sh
+	;;
+esac
+
+exit 0
