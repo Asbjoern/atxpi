@@ -56,7 +56,12 @@ void setup() {
 	pinMode(POWER_SWITCH, INPUT_PULLUP);
 	pinMode(RESET_SWITCH, INPUT_PULLUP);
 
+	#if DEBUG
+	digitalWrite(HDD_LED, HIGH);
+	#else
 	digitalWrite(HDD_LED, LOW);
+	#endif
+
 	powerOff();
 
 	digitalWrite(READY_LED, HIGH);
@@ -157,4 +162,42 @@ void loop() {
 		Serial.println("power cut");
 		#endif
 	}
+
+	#if DEBUG
+	int incomming_byte = 0;
+	if(Serial.available() > 0) {
+		incomming_byte = Serial.read();
+		switch(incomming_byte) {
+			case 48: // '0': trigger soft shutdown
+				digitalWrite(PI_GPIO_23, HIGH);
+				Serial.println("debug: soft shutdown triggered");
+				break;
+			case 49: // '1': power on
+				if(power_state == 0) {
+					Serial.println("debug: power on");
+					powerOn();
+				}
+				else {
+					Serial.println("debug: power already on");
+				}
+				break;
+			case 99: // 'c': clear soft shutdown GPIO line
+				digitalWrite(PI_GPIO_23, LOW);
+				Serial.println("debug: PI_GPIO_23 set to LOW");
+				break;
+			case 102: // 'f': force poweroff
+				powerOff();
+				Serial.println("debug: forced poweroff");
+				break;
+			case 114: // 'r': cycle power
+				Serial.println("debug: cycling power");
+				powerOff();
+				delay(2000);
+				powerOn();
+				break;
+			default:
+				break;
+		}
+	}
+	#endif
 }
