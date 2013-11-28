@@ -1,0 +1,9 @@
+[Unit]
+Description=atxpi gpio boot script
+
+[Service]
+Type=oneshot
+ExecStart=/opt/atxpi/boot.sh
+
+[Install]
+WantedBy=multi-user.target

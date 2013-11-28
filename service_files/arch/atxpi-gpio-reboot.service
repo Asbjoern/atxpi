@@ -1,0 +1,11 @@
+[Unit]
+Description=atxpi gpio reboot script
+DefaultDependencies=no
+Before=reboot.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/atxpi/reboot.sh
+
+[Install]
+WantedBy=reboot.target

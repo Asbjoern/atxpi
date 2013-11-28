@@ -23,7 +23,24 @@ teensy that the RPI is up. When GPIO 24 goes from HIGH to LOW the teensy will wa
 changes from HIGH to LOW.
 
 ## RPI Power Scripts Installation (Arch) ##
-(Working on it)
+Log into the RPI and become root. Then clone the repo and copy required files.
+
+    [root@alarmpi ~]$ git clone https://github.com/steelcaverobotics/atxpi.git
+    [root@alarmpi ~]$ mkdir /opt/atxpi
+    [root@alarmpi ~]$ cp atxpi/rpi_power_scripts/*.sh /opt/atxpi/
+    [root@alarmpi ~]$ chmod 755 /opt/atxpi/*.sh
+    [root@alarmpi ~]$ cp atxpi/service_files/arch/*.service /usr/lib/systemd/system/
+
+Then enable the services, skipping `atxpi-gpio-shutdown.service` if you don't want the RPI to shutdown when the power button is pressed.
+
+    [root@alarmpi ~]$ systemctl enable atxpi-gpio-boot.service
+    [root@alarmpi ~]$ systemctl enable atxpi-gpio-reboot.service
+    [root@alarmpi ~]$ systemctl enable atxpi-gpio-shutdown.service
+
+Finally, start the services. Do not start `atxpi-gpio-reboot.service`, as this will be started when the RPI is rebooting.
+
+    [root@alarmpi ~]$ systemctl start atxpi-gpio-boot.service
+    [root@alarmpi ~]$ systemctl start atxpi-gpio-shutdown.service
 
 ## RPI Power Scripts Installation (Raspbian) ##
 (Working on it)
