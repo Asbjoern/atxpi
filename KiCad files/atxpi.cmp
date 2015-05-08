@@ -1,0 +1,185 @@
+Cmp-Mod V01 Created by Cvpcb (2014-11-06 BZR 5256)-product   date = Mandag '16en' 16. Februar 2015 'kl.' 21.27.05
+
+BeginCmp
+TimeStamp = /5475C78B;
+Reference = C1;
+ValeurCmp = 100nF;
+IdModule  = Capacitors_SMD:C_0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /5475C81B;
+Reference = C2;
+ValeurCmp = 100nF;
+IdModule  = Capacitors_SMD:C_0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /5475C846;
+Reference = C3;
+ValeurCmp = 100nF;
+IdModule  = Capacitors_SMD:C_0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /5475C8B7;
+Reference = C4;
+ValeurCmp = 100nF;
+IdModule  = Capacitors_SMD:C_0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /5474D994;
+Reference = C5;
+ValeurCmp = >100uF;
+IdModule  = Capacitors_SMD:c_elec_6.3x5.8;
+EndCmp
+
+BeginCmp
+TimeStamp = /5474DE9D;
+Reference = C6;
+ValeurCmp = 10uF;
+IdModule  = Capacitors_SMD:c_elec_5x5.3;
+EndCmp
+
+BeginCmp
+TimeStamp = /547582DC;
+Reference = C7;
+ValeurCmp = 100nF;
+IdModule  = Capacitors_SMD:C_0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /54DD622A;
+Reference = C8;
+ValeurCmp = 10n;
+IdModule  = Capacitors_SMD:C_0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /54DD62E9;
+Reference = C9;
+ValeurCmp = 10n;
+IdModule  = Capacitors_SMD:C_0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /5474D689;
+Reference = CON1;
+ValeurCmp = AVR-ISP-6;
+IdModule  = Connectors:pin_2x6_smd;
+EndCmp
+
+BeginCmp
+TimeStamp = /547599E9;
+Reference = D1;
+ValeurCmp = LED;
+IdModule  = LEDs:LED-0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /54DD3C41;
+Reference = D2;
+ValeurCmp = LED;
+IdModule  = LEDs:LED-0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /54DD3740;
+Reference = D3;
+ValeurCmp = LED;
+IdModule  = LEDs:LED-0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5474F327;
+Reference = IC1;
+ValeurCmp = ATMEGA168PA-A;
+IdModule  = SMD_Packages:TQFP-32;
+EndCmp
+
+BeginCmp
+TimeStamp = /54DD3F33;
+Reference = P1;
+ValeurCmp = RPi;
+IdModule  = Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_4pin_straight;
+EndCmp
+
+BeginCmp
+TimeStamp = /54DD4E88;
+Reference = P2;
+ValeurCmp = IOpanel;
+IdModule  = Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_6pin_straight;
+EndCmp
+
+BeginCmp
+TimeStamp = /54E264C1;
+Reference = P3;
+ValeurCmp = PSU;
+IdModule  = Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_4pin_straight;
+EndCmp
+
+BeginCmp
+TimeStamp = /54E256B4;
+Reference = Q1;
+ValeurCmp = FDN335N;
+IdModule  = SMD_Packages:SOT-23;
+EndCmp
+
+BeginCmp
+TimeStamp = /54759A84;
+Reference = R1;
+ValeurCmp = 100R;
+IdModule  = Resistors_SMD:R_0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /54DD6A6B;
+Reference = R2;
+ValeurCmp = 100k;
+IdModule  = Resistors_SMD:R_0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /54DD69D6;
+Reference = R3;
+ValeurCmp = 100k;
+IdModule  = Resistors_SMD:R_0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /54E26340;
+Reference = R4;
+ValeurCmp = 10;
+IdModule  = Resistors_SMD:R_0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /54DD3C47;
+Reference = R5;
+ValeurCmp = 100R;
+IdModule  = Resistors_SMD:R_0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /54DD37BF;
+Reference = R6;
+ValeurCmp = 100R;
+IdModule  = Resistors_SMD:R_0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /54E261CA;
+Reference = R7;
+ValeurCmp = 100k;
+IdModule  = Resistors_SMD:R_0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /5476CC13;
+Reference = U1;
+ValeurCmp = 3.3V;
+IdModule  = SMD_Packages:SOT-223;
+EndCmp
+
+EndListe
